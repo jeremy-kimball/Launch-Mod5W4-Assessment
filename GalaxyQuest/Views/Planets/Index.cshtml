@@ -1,8 +1,26 @@
 ﻿@model List<Planet>
-
+@{
+    var swPlanets = ViewData["swPlanets"] as List<PlanetModel>;
+}
 <h2>Far Far Away Galaxy Planets</h2>
 
-The planets of the star wars galaxy should be here!
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Population</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var planet in swPlanets)
+        {
+            <tr>
+                <td>@planet.Name</td>
+                <td>@planet.Population</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
 <h2>Milky Way Planets</h2>
 
